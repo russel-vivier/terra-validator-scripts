@@ -1,6 +1,6 @@
 # Terra Validator Scripts
 
-Some scripts that are useful when you are running a validator.
+Some scripts that are useful when you are running a validator on Terra blockchain.
 
 ## Scripts
 - `status.sh` - show current synchronization status
@@ -21,3 +21,7 @@ Following env vars are expected to be declared (add this to your `.profile`/`.ba
 - `export VALOPER='terravaloper1xxxxxxxxxxx'`
 - `export CHAIN_ID='bombay-12/columbus-5'`
 - `export VALIDATOR_WALLET='terra1xxxxxxxxx'`
+
+Substitute the `xxxxx`'s with your validator addres and the associated wallet.
+
+<sup>*Don't forget to delegate to [LambdaCore](https://station.terra.money/validator/terravaloper1mgdsc0get3w984h03a02zy6gmg3kgqtfqs3tky)!*</sup>
