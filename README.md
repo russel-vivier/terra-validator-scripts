@@ -10,6 +10,7 @@ Some scripts that are useful when you are running a validator on Terra blockchai
 - `p2pnodes.sh` - prints how many other nodes you are currently connected to.
 - `commission.py` - how much total commission your node has earned (converted to Luna for easier assessment).
 - `claim.sh` - claim all commission.
+- `stuck.sh` - If the node for some reason doesn't sync (current block height doesn't change in 3 minutes) or is unresponsive, it restarts the node. Add this to cron to run every 5-10-30 minutes. **WARNING**: needs to be run as `root` as it uses `systemctl`.
 
 ## Requirements
 - `python3`
