@@ -1,8 +1,8 @@
 #!/bin/bash
 
-echo "-------------------"
+echo "----"
 
-HEIGHT1=$(terrad status | jq -r ".SyncInfo.latest_block_height")
+HEIGHT1=$(timeout 10s terrad status | jq -r ".SyncInfo.latest_block_height")
 
 if [ $? -ne 0 ]
 then
@@ -15,7 +15,7 @@ fi
 
 sleep 3m
 
-HEIGHT2=$(terrad status | jq -r ".SyncInfo.latest_block_height")
+HEIGHT2=$(timeout 10s terrad status | jq -r ".SyncInfo.latest_block_height")
 
 if [ $? -ne 0 ]
 then
@@ -33,4 +33,4 @@ then
     exit 0
 fi
 
-echo "NODE IS OK"
+echo "NODE OK"
