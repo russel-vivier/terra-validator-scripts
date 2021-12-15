@@ -2,7 +2,7 @@
 
 echo "----"
 
-HEIGHT1=$(timeout 10s terrad status | jq -r ".SyncInfo.latest_block_height")
+HEIGHT1=$(timeout 10s terrad status | jq ".SyncInfo.latest_block_height")
 
 if [ $? -ne 0 ]
 then
@@ -15,7 +15,7 @@ fi
 
 sleep 3m
 
-HEIGHT2=$(timeout 10s terrad status | jq -r ".SyncInfo.latest_block_height")
+HEIGHT2=$(timeout 10s terrad status | jq ".SyncInfo.latest_block_height")
 
 if [ $? -ne 0 ]
 then
@@ -25,7 +25,7 @@ then
 	exit 0
 fi
 
-if [ HEIGHT2 = HEIGHT1 ]
+if [ $HEIGHT2 == $HEIGHT1 ]
 then
     # terrad is stuck
     echo "THE NODE SEEMS TO BE STUCK, RESTARTING"
